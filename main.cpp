@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 int main() {
-    const int size = 5;
+    const int size = 10;
     int dynamicSize = 0;
     char input;
     int flag;
@@ -10,10 +10,10 @@ int main() {
     char arrB[size] = {'U','I','V','X','Q'};
     char arrC[size] = {'Z','W','E','M','J'};
     char arrD[size] = {'L','U','Z','M','K'};
-    auto *arrE = (char*)malloc(sizeof(char) * 10);
+    char arrE[size] = {0};
     //input
 
-    cout << "Input the elements of array A" << endl;
+  /*  cout << "Input the elements of array A" << endl;
     for (char &i : arrA) {
         cin >> i;
     }
@@ -28,7 +28,7 @@ int main() {
     cout << "Input the elements of array D" << endl;
     for (char &i : arrD) {
         cin >> i;
-    }
+    }*/
 
     // main part for arrays
     for (int j = 0; j < size; ++j) {
@@ -57,12 +57,10 @@ int main() {
             dynamicSize++;
         }
     }
-    arrE = (char*)realloc(arrE,dynamicSize * sizeof(char));
-    for (int k = 0; k < dynamicSize; ++k) {
+    for (int k = 0;arrE[k]; ++k) {
         cout << arrE[k] << " ";
     }
     cout << endl;
-    free(arrE);
     return 0;
 
 }
