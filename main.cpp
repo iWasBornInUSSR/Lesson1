@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "binaryWord.h"
 using namespace std;
 int main() {
     const int size = 10;
@@ -61,6 +62,7 @@ int main() {
         cout << arrE[k] << " ";
     }
     cout << endl;
+    taskWithWord();
     return 0;
 
 }
