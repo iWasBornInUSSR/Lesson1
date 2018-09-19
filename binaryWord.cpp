@@ -18,7 +18,7 @@ int taskWithWord() {
     for (int i = 0;arrE[i]; ++i) wE |= (1 << arrE[i] - 'A');
     //cout << wA << " " << wB << " " << wC << " " << wD << " " << endl;
     // E = A\B\C || D
-    wE = ((wA & bitOperatorNOT(wB)) & bitOperatorNOT(wC)) | wD;
+    wE = ((wA & ~wB) & ~wC) | wD;
 
     //convert machine word to array of char
     for (int i = 0, k = 0;i < sizeof(int) *8 - 1;++i)
@@ -28,20 +28,6 @@ int taskWithWord() {
     cout << arrE << endl;
     return 0;
 }
-int bitOperatorNOT(int source) {
-    for (int i = 0; i < sizeof(int) * 8 - 1; ++i) {
-        source = source ^ (1 << i);
-    }
-    return  source;
-}
-/*int bitOperatorOR(int first , int second) {
-    int result = 0;
-    for (int i = 0; i < sizeof(int) * 8 - 1; ++i) {
-        result += pow(2,i) * ((first & (1 << i) ? 1 : 0) || (second & (1 << i)) ? 1 : 0); // maybe bad code
-        //! !!! pow - expensive operation
-    }
-    return result;
-}*/
 // func to show bin representation of a number
 string bin(int k, size_t size)
 {
