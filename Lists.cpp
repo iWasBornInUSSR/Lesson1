@@ -1,5 +1,5 @@
 //
-// Created by peeknick on 05.09.18.
+
 //
 #include <cstdlib>
 #include <iostream>
