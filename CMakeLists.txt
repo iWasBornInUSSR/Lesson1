@@ -3,4 +3,5 @@ project(Lesson1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Lesson1 main.cpp Lists.h Lists.cpp binaryWord.cpp binaryWord.h)
+add_executable(Lesson1 main.cpp Lists.h Lists.cpp binaryWord.cpp binaryWord.h testGenerator.cpp testGenerator.h)
+add_executable(testGenerator testGenerator.cpp)
