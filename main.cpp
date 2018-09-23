@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "binaryWord.h"
+#include "Lists.h"
 using namespace std;
 int main() {
     const int size = 10;
@@ -58,10 +59,12 @@ int main() {
             dynamicSize++;
         }
     }
+
     for (int k = 0;arrE[k]; ++k) {
         cout << arrE[k] << " ";
     }
     cout << endl;
+    doTaskWithLists(arrA, arrB, arrC, arrD, arrE);
     taskWithWord();
     return 0;
 
