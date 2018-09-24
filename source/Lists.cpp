@@ -83,7 +83,7 @@ void doTaskWithLists(char *A, char *B, char *C, char *D) {
             add(headE,copy);
         }
     }
-    printList(headE);
+   // printList(headE);
     freeAll(headA);
     freeAll(headB);
     freeAll(headC);
