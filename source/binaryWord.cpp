@@ -16,7 +16,10 @@ int taskWithWord(int wA, int wB, int wC, int wD) {
             arrE[k++] = i + 'A';
     //-------------------------
     cout << "Binary word realization" << endl;
-    cout << arrE << endl;
+    for (int k = 0;arrE[k]; ++k) {
+        cout << arrE[k] << " ";
+    }
+    cout << endl;
     return 0;
 }
 // func to show bin representation of a number

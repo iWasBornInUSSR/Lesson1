@@ -61,6 +61,8 @@ void doTaskWithLists(char *A, char *B, char *C, char *D) {
                 break;
             }
             c = c->next;
+            if(c == nullptr)
+                break;
         }
         if(flag){
             nodesArray *copy = createNode(a->info);
