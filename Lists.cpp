@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "Lists.h"
+#include "consts.h"
 using  namespace std;
 headArray *creatHead(int id){
 
@@ -39,8 +40,8 @@ void printList(headArray *head){
     }
     cout << endl;
 }
-void doTaskWithLists(char *A, char *B, char *C, char *D, char *E) {
-
+void doTaskWithLists(char *A, char *B, char *C, char *D) {
+    char E[size] = {0};
     headArray *headA = creatHead(1);
     headArray *headB = creatHead(2);
     headArray *headC = creatHead(3);

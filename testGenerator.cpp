@@ -22,8 +22,7 @@ using namespace std;
 }*/
 //! attention bad code
 int generateTestBynary(int alphabet, int size)
-{   srand(time(nullptr));
-    int w = 0;
+{   int w = 0;
     for (int i = 0, k = 0; i < alphabet; ++i) {
         if (rand() % 2) {
             w = w | ((rand() % 2) << i);

@@ -15,7 +15,7 @@ struct headArray
     int id;
 };
 void addAllToList(headArray *head, char *array);
-void doTaskWithLists(char *A, char *B, char *C, char *D, char *E);
+void doTaskWithLists(char *A, char *B, char *C, char *D);
 void checkLinList(headArray *head);
 void add(headArray *head, nodesArray *node);
 void freeAll(headArray *head);
