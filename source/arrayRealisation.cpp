@@ -27,9 +27,9 @@ void doTaskWithArray(const char *arrA, const char *arrB, const char *arrC, const
        }*/
 
     // main part for arrays
-    for (int j = 0; j < size; ++j) {
+    for (int j = 0; j < alphabet; ++j) {
         flag = 1;
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < alphabet; ++i) {
             if(arrA[j] == arrB[i] || arrA[j] == arrC[i]) {
                 flag = 0;
                 break;
@@ -40,7 +40,7 @@ void doTaskWithArray(const char *arrA, const char *arrB, const char *arrC, const
             dynamicSize++;
         }
     }
-    for (int l = 0; l < size; ++l) {
+    for (int l = 0; l < alphabet; ++l) {
         flag = 1;
         for (int i = 0; i < dynamicSize; ++i) {
             if(arrD[l] == arrE[i]) {
@@ -53,7 +53,7 @@ void doTaskWithArray(const char *arrA, const char *arrB, const char *arrC, const
             dynamicSize++;
         }
     }
-    cout << "arrayRealisation:" << endl;
+    cout << "array realization:" << endl;
     for (int k = 0;arrE[k]; ++k) {
         cout << arrE[k] << " ";
     }

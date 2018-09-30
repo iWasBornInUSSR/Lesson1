@@ -7,7 +7,6 @@
 #include "consts.h"
 using  namespace std;
 void doTaskWithLists(char *A, char *B, char *C, char *D) {
-    char E[size] = {0};
     headArray *headA = createHead(1);
     headArray *headB = createHead(2);
     headArray *headC = createHead(3);
@@ -15,20 +14,18 @@ void doTaskWithLists(char *A, char *B, char *C, char *D) {
     headArray *headE = createHead(5);
     addAllToList(headA, A);
     addAllToList(headB, B);
-    addAllToList(headC, C);
+    //! Trick: Add all from C to list B.
+    addAllToList(headB, C);
     addAllToList(headD, D);
     int flag;
     // E = A / B / C
     for (nodesArray *a = headA->first; a != nullptr;  a = a->next) {
         flag = 1;
-        for (nodesArray *b = headB->first , *c = headC->first; b != nullptr;  b = b->next) {
-            if(a->info == b->info || a->info == c->info){
+        for (nodesArray *b = headB->first; b != nullptr; b = b->next) {
+            if (a->info == b->info) {
                 flag = 0;
                 break;
             }
-            c = c->next;
-            if(c == nullptr)
-                break;
         }
         if(flag){
             nodesArray *copy = createNode(a->info);
@@ -89,7 +86,7 @@ nodesArray *createNode(char charInfo) {
 
 void printList(headArray *head) {
 
-    cout << "List content" << endl;
+    cout << "List realization:" << endl;
     for (nodesArray *i = head->first; i != nullptr; i = i->next) {
         cout << i->info << " ";
     }
