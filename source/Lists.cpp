@@ -6,47 +6,13 @@
 #include "Lists.h"
 #include "consts.h"
 using  namespace std;
-headArray *creatHead(int id){
-
-    headArray *head = (headArray*)malloc(sizeof(headArray));
-    head->first = nullptr;
-    head->id = id;
-    return head;
-}
-void addFirst(headArray *head,nodesArray *firstNode){
-
-    head->first = firstNode;
-
-}
-void addInEnd(headArray *head,nodesArray *newNode){
-
-    nodesArray *endNode = head->first;
-    while(endNode->next != nullptr)
-        endNode = endNode->next;
-    endNode->next = newNode;
-}
-nodesArray *createNode(char charInfo){
-
-    nodesArray *newNode = (nodesArray*)malloc(sizeof(nodesArray));
-    newNode->next = nullptr;
-    newNode->info = charInfo;
-    return newNode;
-}
-void printList(headArray *head){
-
-    cout << "List content" << endl;
-    for (nodesArray *i = head->first; i != nullptr ; i = i->next) {
-        cout << i->info << " ";
-    }
-    cout << endl;
-}
 void doTaskWithLists(char *A, char *B, char *C, char *D) {
     char E[size] = {0};
-    headArray *headA = creatHead(1);
-    headArray *headB = creatHead(2);
-    headArray *headC = creatHead(3);
-    headArray *headD = creatHead(4);
-    headArray *headE = creatHead(5);
+    headArray *headA = createHead(1);
+    headArray *headB = createHead(2);
+    headArray *headC = createHead(3);
+    headArray *headD = createHead(4);
+    headArray *headE = createHead(5);
     addAllToList(headA, A);
     addAllToList(headB, B);
     addAllToList(headC, C);
@@ -83,12 +49,51 @@ void doTaskWithLists(char *A, char *B, char *C, char *D) {
             add(headE,copy);
         }
     }
-   // printList(headE);
+    printList(headE);
     freeAll(headA);
     freeAll(headB);
     freeAll(headC);
     freeAll(headD);
     freeAll(headE);
+}
+
+headArray *createHead(int id) {
+
+    headArray *head = (headArray *) malloc(sizeof(headArray));
+    head->first = nullptr;
+    head->id = id;
+    return head;
+}
+
+void addFirst(headArray *head, nodesArray *firstNode) {
+
+    head->first = firstNode;
+
+}
+
+void addInEnd(headArray *head, nodesArray *newNode) {
+
+    nodesArray *endNode = head->first;
+    while (endNode->next != nullptr)
+        endNode = endNode->next;
+    endNode->next = newNode;
+}
+
+nodesArray *createNode(char charInfo) {
+
+    nodesArray *newNode = (nodesArray *) malloc(sizeof(nodesArray));
+    newNode->next = nullptr;
+    newNode->info = charInfo;
+    return newNode;
+}
+
+void printList(headArray *head) {
+
+    cout << "List content" << endl;
+    for (nodesArray *i = head->first; i != nullptr; i = i->next) {
+        cout << i->info << " ";
+    }
+    cout << endl;
 }
 void addAllToList(headArray *head, char *array) {
 
@@ -100,7 +105,8 @@ void addAllToList(headArray *head, char *array) {
     }
 
 }
-void checkLinList(headArray *head)
+
+/*void checkLinList(headArray *head)
 {
     struct nodesArray *p = head->first;
     while (p != nullptr)
@@ -113,7 +119,7 @@ void checkLinList(headArray *head)
         p = p->next;
     }
     printf("-------------------------------\n");
-}
+}*/
 void add(headArray *head, nodesArray *node)
 {
     if(head->first == nullptr)

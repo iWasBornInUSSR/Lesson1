@@ -3,32 +3,16 @@
 //
 
 #include <cstdlib>
-#include <ctime>
 #include <iostream>
 #include "testGenerator.h"
 using namespace std;
-/*int main()
-{   const int size = 10;
-    const int alphabet = 26;
-    char arrE[size] = {0};
-    int wE = generateTestBynary(alphabet, size);
-    //convert machine word to array of char
-    for (int i = 0, k = 0;i < alphabet;++i)
-        if(wE & (1 << i))
-            arrE[k++] = i + 'A';
-    //-------------------------
- //   generateTestArray(26,5,arrE);
-    cout << arrE << endl;
-}*/
 //! attention bad code
-int generateTestBynary(int alphabet, int size)
+int generateTestBinary(int alphabet)
 {   int w = 0;
-    for (int i = 0, k = 0; i < alphabet; ++i) {
+    for (int i = 0; i < alphabet; ++i) {
         if (rand() % 2) {
             w = w | ((rand() % 2) << i);
-            k++;
         }
-        if(k == size) break;
     }
     return  w;
 }

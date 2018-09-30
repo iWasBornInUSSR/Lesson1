@@ -53,10 +53,10 @@ void doTaskWithArray(const char *arrA, const char *arrB, const char *arrC, const
             dynamicSize++;
         }
     }
-   /* cout << "arrayRealisation:" << endl;
+    cout << "arrayRealisation:" << endl;
     for (int k = 0;arrE[k]; ++k) {
         cout << arrE[k] << " ";
     }
-    cout << endl;*/
+    cout << endl;
 
 }
